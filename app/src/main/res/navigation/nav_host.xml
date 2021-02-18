@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.fmi.examples.familybudgetapp.MainScreen"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreen_to_addExpenseScreen"
+            app:destination="@id/addExpenseScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_addIncomeScreen"
+            app:destination="@id/addIncomeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/addIncomeScreen"
+        android:name="com.fmi.examples.familybudgetapp.AddIncomeScreen"
+        android:label="fragment_add_income_screen"
+        tools:layout="@layout/fragment_add_income_screen" >
+        <action
+            android:id="@+id/action_addIncomeScreen_to_alterDBScreen"
+            app:destination="@id/alterDBScreen" />
+        <action
+            android:id="@+id/action_addIncomeScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExpenseScreen"
+        android:name="com.fmi.examples.familybudgetapp.AddExpenseScreen"
+        android:label="fragment_add_expense_screen"
+        tools:layout="@layout/fragment_add_expense_screen" >
+        <action
+            android:id="@+id/action_addExpenseScreen_to_alterDBScreen"
+            app:destination="@id/alterDBScreen" />
+        <action
+            android:id="@+id/action_addExpenseScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/alterDBScreen"
+        android:name="com.fmi.examples.familybudgetapp.AlterDBScreen"
+        android:label="fragment_alter_d_b_screen"
+        tools:layout="@layout/fragment_alter_d_b_screen" >
+        <action
+            android:id="@+id/action_alterDBScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+</navigation>
