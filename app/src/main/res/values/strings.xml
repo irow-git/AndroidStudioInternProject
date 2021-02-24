@@ -2,4 +2,15 @@
     <string name="app_name">FamilyBudgetApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addIncomeBtnText">Добави приход</string>
+    <string name="addExpenseBtnText">Добави разход</string>
+    <string name="incomeFragmentHomeBtnText">Начален Екран</string>
+    <string name="fragmentChangesBtnText">Направи промени</string>
+    <string name="fragIncomeCheckBoxText">Повтарящ се приход</string>
+    <string name="fragIncomeEditText">Ден</string>
+    <string name="fragIncomeAddBtnText">Добави</string>
+    <string name="fragIncomeShowIncomeBtnText">Покажи списък на приходите</string>
+    <string name="fragIncomeDateBtnText">Избери дата</string>
+    <string name="fragIncomeDateEditTxt">TextView</string>
+    <string name="fragIncomeDeleteBtnTxt">Изтрий</string>
 </resources>
