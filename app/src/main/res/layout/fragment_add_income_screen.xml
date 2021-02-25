@@ -7,6 +7,76 @@
     tools:context=".AddIncomeScreen"
     android:background="@drawable/custom_background_gradient">
 
+    <EditText
+        android:id="@+id/NameEditTextIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Име"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="@string/NameEditTextIncome"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AmountEditTextIncome" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="324dp"
+        android:layout_height="381dp"
+        android:contentDescription="@string/contentDescription"
+        android:src="@drawable/saving"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pickDateIncomeBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/DateBtnText"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameEditTextIncome" />
+
+    <Button
+        android:id="@+id/homeScreenIncomeBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/HomeBtnText"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/alterDBIncomeBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="152dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/ChangesBtnText"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/fragIncomeDeleteBtn"
         android:layout_width="250dp"
@@ -21,51 +91,19 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alterDBIncomeBtn"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.653" />
 
-    <EditText
-        android:id="@+id/fragIncomeNameEditTxt"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="69dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="@string/fragIncomeEditText"
-        app:layout_constraintEnd_toStartOf="@+id/addIncomeButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/pickDateBtn"
-        android:layout_width="250dp"
+    <CheckBox
+        android:id="@+id/checkBoxIncome"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/fragIncomeDateBtnText"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:text="@string/fragIncomeCheckBoxText"
+        android:textColor="#990099"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/homeScreenIncomeBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateText" />
-
-    <Button
-        android:id="@+id/homeScreenIncomeBtn"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/incomeFragmentHomeBtnText"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -82,87 +120,61 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alterDBIncomeBtn"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.089" />
 
-    <Button
-        android:id="@+id/alterDBIncomeBtn"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/fragmentChangesBtnText"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="310dp"
-        android:layout_height="208dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/saving"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
-
-    <CheckBox
-        android:id="@+id/checkBoxIncome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/fragIncomeCheckBoxText"
-        android:textColor="#990099"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/homeScreenIncomeBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/AmountIncomeEditTxt"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="69dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="@string/fragIncomeEditText"
-        app:layout_constraintEnd_toStartOf="@+id/addIncomeButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addIncomeButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/custom_button2"
-        android:text="@string/fragIncomeAddBtnText"
+        android:text="@string/AddBtnText"
         android:textColor="#FFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dayTextViewIncome"
+        android:layout_width="74dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/DayTextView"
+        android:textColor="#990099"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dateText"
-        android:layout_width="170dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="76dp"
-        android:text="@string/fragIncomeDateEditTxt"
+        android:id="@+id/monthTextViewIncome"
+        android:layout_width="154dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/MonthTextView"
+        android:textColor="#990099"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toEndOf="@+id/dayTextViewIncome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/AmountEditTextIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Сума"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_money_icon"
+        android:ems="10"
+        android:hint="@string/AmountEditText"
+        android:inputType="textPersonName"
+        android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AmountIncomeEditTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/monthTextViewIncome" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

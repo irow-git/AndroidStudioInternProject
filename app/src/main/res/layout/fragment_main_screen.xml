@@ -7,11 +7,12 @@
     tools:context=".MainScreen"
     android:background="@drawable/custom_background_gradient">
 
+
     <Button
         android:id="@+id/addIncomeBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/custom_button"
         android:text="@string/addIncomeBtnText"
         android:textAllCaps="false"
@@ -22,12 +23,11 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <Button
         android:id="@+id/addExpenseBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/custom_button"
         android:text="@string/addExpenseBtnText"
         android:textAllCaps="false"
@@ -35,6 +35,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

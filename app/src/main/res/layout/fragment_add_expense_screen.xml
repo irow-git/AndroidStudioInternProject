@@ -7,28 +7,119 @@
     android:background="@drawable/custom_background_gradient"
     tools:context=".AddExpenseScreen">
 
+    <EditText
+        android:id="@+id/NameEditTextExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Име"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="@string/NameEditTextExpense"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountEditTextExpense" />
+
+    <ImageView
+        android:layout_width="324dp"
+        android:layout_height="381dp"
+        android:layout_marginBottom="90dp"
+        android:contentDescription="@string/contentDescription"
+        android:src="@drawable/saving"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/monthTextViewExpense"
+        android:layout_width="154dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/MonthTextView"
+        android:textColor="#990099"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/dayTextViewExpense"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/amountEditTextExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Сума"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_money_icon"
+        android:ems="10"
+        android:hint="@string/AmountEditText"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monthTextViewExpense" />
+
+    <Button
+        android:id="@+id/addExpenseBtn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/custom_button2"
+        android:text="@string/AddBtnText"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dayTextViewExpense"
+        android:layout_width="74dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/DayTextView"
+        android:textColor="#990099"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pickDateExpenseBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/DateBtnText"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameEditTextExpense" />
+
     <Button
         android:id="@+id/homeScreenExpenseBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/custom_button"
-        android:text="Начален Екран"
+        android:text="@string/HomeBtnText"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/alterDBExpenseBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/custom_button"
-        android:text="Направи промени"
+        android:text="@string/ChangesBtnText"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -37,21 +128,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:layout_width="324dp"
-        android:layout_height="381dp"
-        android:src="@drawable/saving"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <CheckBox
-        android:id="@+id/checkBoxIncome"
+        android:id="@+id/checkBoxExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:text="Повтарящ се разход"
+        android:text="@string/fragExpenseCheckBoxText"
         android:textColor="#990099"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/homeScreenExpenseBtn"

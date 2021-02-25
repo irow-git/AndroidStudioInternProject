@@ -42,17 +42,16 @@ class MainActivity : AppCompatActivity() {
      */
 
         fun clearEditTexts() {
-        AmountIncomeEditTxt.setText("")
-        fragIncomeNameEditTxt.setText("")
-        dateText.text = ""
+        AmountEditTextIncome.setText("")
+        NameEditTextIncome.setText("")
     }
 
 
     fun handleInserts() {
         alterDBIncomeBtn.setOnClickListener {
             try {
-                dbHelper.insertData(AmountIncomeEditTxt.text.toString(),
-                    fragIncomeNameEditTxt.text.toString())
+                dbHelper.insertData(AmountEditTextIncome.text.toString(),
+                    NameEditTextIncome.text.toString())
                 clearEditTexts()
             }catch (e: Exception) {
                 e.printStackTrace()
@@ -64,8 +63,8 @@ class MainActivity : AppCompatActivity() {
     fun handleUpdates() {
         alterDBIncomeBtn.setOnClickListener {
             try {
-                val isUpdate = dbHelper.updateData(AmountIncomeEditTxt.text.toString(),
-                    fragIncomeNameEditTxt.text.toString())
+                val isUpdate = dbHelper.updateData(AmountEditTextIncome.text.toString(),
+                    NameEditTextIncome.text.toString())
                 if (isUpdate == true)
                     showToast("Date Updated Successfully")
                 else
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     fun handleDelets() {
         fragIncomeDeleteBtn.setOnClickListener {
             try {
-                dbHelper.deleteData(fragIncomeNameEditTxt.text.toString())
+                dbHelper.deleteData(NameEditTextIncome.text.toString())
                 clearEditTexts()
             }catch (e:Exception) {
                 e.printStackTrace()
@@ -108,7 +107,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,23 +117,6 @@ class MainActivity : AppCompatActivity() {
         handleDelets()
         handleViewling()
 
-
-        /**
-         * Creating a calendar
-         */
-        addIncBtn.setOnClickListener {
-            val now = Calendar.getInstance()
-            val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                val selectedDate = Calendar.getInstance()
-                selectedDate.set(Calendar.YEAR,year)
-                selectedDate.set(Calendar.MONTH,month)
-                selectedDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-                val date = formate.format(selectedDate.time)
-                Toast.makeText(this, "Date: " + date,Toast.LENGTH_SHORT ).show()
-            },
-
-                now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH))
-            datePicker.show()
     }
-}
+
 }
