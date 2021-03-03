@@ -3,26 +3,16 @@ package com.fmi.examples.familybudgetapp
 import android.app.DatePickerDialog
 import android.os.Build
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.widget.addTextChangedListener
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.*
 
 import kotlinx.android.synthetic.main.fragment_add_income_screen.*
 import kotlinx.android.synthetic.main.fragment_add_income_screen.view.*
-import kotlinx.android.synthetic.main.fragment_alter_d_b_screen.*
-import kotlinx.android.synthetic.main.fragment_main_screen.view.*
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -97,11 +87,11 @@ class AddIncomeScreen : Fragment() {
 
         return view
     }
-    fun data() {
+    private fun data() {
         val dbStructure = DBStructure(
             dayTextViewIncome.text.toString(),
             monthTextViewIncome.text.toString(),
-            AmountEditTextIncome.text.toString().toInt(),
+            AmountEditTextIncome.text.toString().toDouble(),
             NameEditTextIncome.text.toString(),
             intForDb
         )

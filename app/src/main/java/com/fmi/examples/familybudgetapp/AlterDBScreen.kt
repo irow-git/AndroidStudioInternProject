@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_alter_d_b_screen.*
 import kotlinx.android.synthetic.main.fragment_alter_d_b_screen.view.*
 
 class AlterDBScreen : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,6 +21,15 @@ class AlterDBScreen : Fragment() {
 
         view.homeScreenAlterDBBtn.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_alterDBScreen_to_mainScreen)}
 
+        var db = context?.let { DataBaseHandler(it) }
+        var data = db?.readData()
+        if (data != null) {
+            for(i in 0..(data.size-1)){
+                viewTest.append(data[i].id.toString() + " " + data[i].name + "\n")
+            }
+        }
+
         return view
     }
+
 }

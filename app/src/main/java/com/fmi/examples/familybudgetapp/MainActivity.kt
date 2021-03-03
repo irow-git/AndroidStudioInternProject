@@ -6,11 +6,13 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.provider.ContactsContract
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_add_income_screen.*
+import kotlinx.android.synthetic.main.fragment_alter_d_b_screen.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
@@ -109,10 +111,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 */
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 /*
         handleInserts()
         handleUpdates()

@@ -89,7 +89,7 @@ class AddExpenseScreen : Fragment() {
         val dbStructure = DBStructure(
             dayTextViewExpense.text.toString(),
             monthTextViewExpense.text.toString(),
-            AmountEditTextExpense.text.toString().toInt(),
+            AmountEditTextExpense.text.toString().toDouble(),
             NameEditTextExpense.text.toString(),
             intForDb
         )
