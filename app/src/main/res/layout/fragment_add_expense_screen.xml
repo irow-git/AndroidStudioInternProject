@@ -20,7 +20,7 @@
         android:inputType="textPersonName"
         android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountEditTextExpense" />
+        app:layout_constraintTop_toBottomOf="@+id/AmountEditTextExpense" />
 
     <ImageView
         android:layout_width="324dp"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/amountEditTextExpense"
+        android:id="@+id/AmountEditTextExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/monthTextViewExpense" />
 
     <Button
-        android:id="@+id/addExpenseBtn"
+        android:id="@+id/addExpenseButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"

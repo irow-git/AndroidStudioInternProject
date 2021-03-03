@@ -3,6 +3,7 @@ package com.fmi.examples.familybudgetapp
 import android.app.DatePickerDialog
 import android.os.Build
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
@@ -19,6 +20,8 @@ import kotlinx.android.synthetic.*
 
 import kotlinx.android.synthetic.main.fragment_add_income_screen.*
 import kotlinx.android.synthetic.main.fragment_add_income_screen.view.*
+import kotlinx.android.synthetic.main.fragment_alter_d_b_screen.*
+import kotlinx.android.synthetic.main.fragment_main_screen.view.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,6 +29,7 @@ import java.util.*
 
 class AddIncomeScreen : Fragment() {
 
+    var intForDb = 1
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,13 +38,15 @@ class AddIncomeScreen : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_add_income_screen, container, false)
 
-        view.homeScreenIncomeBtn.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_addIncomeScreen_to_mainScreen)
+        view.homeScreenIncomeBtn.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_addIncomeScreen_to_mainScreen) }
+        view.alterDBIncomeBtn.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_addIncomeScreen_to_alterDBScreen) }
+
+        view.addIncomeButton.setOnClickListener{
+
+            data()
+
         }
-        view.alterDBIncomeBtn.setOnClickListener {
-            Navigation.findNavController(view)
-                .navigate(R.id.action_addIncomeScreen_to_alterDBScreen)
-        }
+
 
         /**
          * Calendar
@@ -79,7 +85,7 @@ class AddIncomeScreen : Fragment() {
             datePicker?.show()
         }
 
-        view.checkBoxIncome.setOnCheckedChangeListener() { _, isChecked ->
+        view.checkBoxIncome.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 monthcb = "всички"
                 bool = true
@@ -88,6 +94,18 @@ class AddIncomeScreen : Fragment() {
                 bool = false
             }
         }
+
         return view
+    }
+    fun data() {
+        val dbStructure = DBStructure(
+            dayTextViewIncome.text.toString(),
+            monthTextViewIncome.text.toString(),
+            AmountEditTextIncome.text.toString().toInt(),
+            NameEditTextIncome.text.toString(),
+            intForDb
+        )
+        val db = context?.let { it1 -> DataBaseHandler(it1) }
+        db?.insertData(dbStructure)
     }
 }

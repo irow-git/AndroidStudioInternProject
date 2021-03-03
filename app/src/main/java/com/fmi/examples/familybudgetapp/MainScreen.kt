@@ -18,7 +18,7 @@ class MainScreen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_main_screen, container, false)
 
         view.addIncomeBtn.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_mainScreen_to_addIncomeScreen)}
-        view.addExpenseBtn.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_mainScreen_to_addExpenseScreen)}
+        view.addExpenseButton.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_mainScreen_to_addExpenseScreen)}
 
         return view
     }

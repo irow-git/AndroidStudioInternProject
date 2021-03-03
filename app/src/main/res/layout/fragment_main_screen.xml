@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/addExpenseBtn"
+        android:id="@+id/addExpenseButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"

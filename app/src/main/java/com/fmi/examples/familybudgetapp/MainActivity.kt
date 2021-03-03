@@ -17,19 +17,20 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    var formate = SimpleDateFormat( "dd MMM, yyyy", Locale.GERMANY)
+   /** var formate = SimpleDateFormat( "dd MMM, yyyy", Locale.GERMANY)
 
     //internal means a variable is visible within a given module
-    internal var dbHelper = DatebaseHelper(this)
+     internal var dbHelper = DatebaseHelper(this)
 
     /**
      * Creating a function to show Toast message
      */
     fun showToast(text: String) {
         Toast.makeText(this@MainActivity, text, Toast.LENGTH_LONG).show()
+
     }
 
-    fun showDialog(title : String, Message : String) {
+     fun showDialog(title : String, Message : String) {
         val builder = AlertDialog.Builder(this)
         builder.setCancelable(true)
         builder.setTitle(title)
@@ -41,10 +42,11 @@ class MainActivity : AppCompatActivity() {
      *Creating a method to clear our editTexts
      */
 
-        fun clearEditTexts() {
+   fun clearEditTexts() {
         AmountEditTextIncome.setText("")
         NameEditTextIncome.setText("")
     }
+
 
 
     fun handleInserts() {
@@ -60,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun handleUpdates() {
+     fun handleUpdates() {
         alterDBIncomeBtn.setOnClickListener {
             try {
                 val isUpdate = dbHelper.updateData(AmountEditTextIncome.text.toString(),
@@ -76,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun handleDelets() {
+   fun handleDelets() {
         fragIncomeDeleteBtn.setOnClickListener {
             try {
                 dbHelper.deleteData(NameEditTextIncome.text.toString())
@@ -106,16 +108,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+*/
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+/*
         handleInserts()
         handleUpdates()
         handleDelets()
         handleViewling()
+
+
+ */
 
     }
 
