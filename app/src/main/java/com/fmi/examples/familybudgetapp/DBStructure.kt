@@ -17,7 +17,5 @@ class DBStructure{
         this.isIncome = isIncome
     }
     constructor(){
-
     }
-
 }

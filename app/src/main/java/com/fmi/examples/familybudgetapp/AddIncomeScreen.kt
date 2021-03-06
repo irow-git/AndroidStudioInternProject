@@ -1,6 +1,7 @@
 package com.fmi.examples.familybudgetapp
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -29,7 +30,10 @@ class AddIncomeScreen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_add_income_screen, container, false)
 
         view.homeScreenIncomeBtn.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_addIncomeScreen_to_mainScreen) }
-        view.alterDBIncomeBtn.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_addIncomeScreen_to_alterDBScreen) }
+        view.alterDBIncomeBtn.setOnClickListener {
+            val intent = Intent(activity, AlterDBScreenActivity::class.java)
+            startActivity(intent)
+        }
 
         view.addIncomeButton.setOnClickListener{
 

@@ -1,6 +1,7 @@
 package com.fmi.examples.familybudgetapp
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.activity_alter_d_b_screen.*
 import kotlinx.android.synthetic.main.fragment_add_expense_screen.*
 import kotlinx.android.synthetic.main.fragment_add_expense_screen.view.*
 import java.text.SimpleDateFormat
@@ -27,8 +29,8 @@ class AddExpenseScreen : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_addExpenseScreen_to_mainScreen)
         }
         view.alterDBExpenseBtn.setOnClickListener {
-            Navigation.findNavController(view)
-                .navigate(R.id.action_addExpenseScreen_to_alterDBScreen)
+            val intent = Intent(activity, AlterDBScreenActivity::class.java)
+            startActivity(intent)
         }
 
         view.addExpenseButton.setOnClickListener {
@@ -43,7 +45,7 @@ class AddExpenseScreen : Fragment() {
         var monthcb = ""
         var bool = false
         view.pickDateExpenseBtn.setOnClickListener {
-            val formate = SimpleDateFormat("dd MMM yyyy", Locale.GERMANY)
+            val formate = SimpleDateFormat("dd MMM yyyy", Locale.CANADA)
             val now = Calendar.getInstance()
             val datePicker =
                 context?.let { it1 ->
