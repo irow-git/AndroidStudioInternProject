@@ -45,7 +45,7 @@ class AddExpenseScreen : Fragment() {
         var monthcb = ""
         var bool = false
         view.pickDateExpenseBtn.setOnClickListener {
-            val formate = SimpleDateFormat("dd MMM yyyy", Locale.CANADA)
+            val formate = SimpleDateFormat("dd MMM yyyy", Locale.UK)
             val now = Calendar.getInstance()
             val datePicker =
                 context?.let { it1 ->

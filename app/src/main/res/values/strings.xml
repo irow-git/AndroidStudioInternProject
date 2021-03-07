@@ -17,5 +17,6 @@
     <string name="NameEditTextIncome">Име на приход</string>
     <string name="NameEditTextExpense">Име на разход</string>
     <string name="fragIncomeDeleteBtnTxt">Изтрий</string>
+    <string name="Budget">Общ бюджет</string>
     <string name="contentDescription">Pig</string>
 </resources>

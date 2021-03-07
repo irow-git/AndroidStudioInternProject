@@ -26,7 +26,7 @@ class AlterDBScreenActivity : AppCompatActivity() {
             var s = ""
             s = if(data[i].isIncome == 0) "Приход"
             else "Разход"
-            arrayList.add("Име: " + data[i].name + "\n"
+            arrayList.add(data[i].id.toString() + ": Име: " + data[i].name + "\n"
                     + s + ": " + data[i].amount + "лв" +"\n"
                     + data[i].day + "\n" + data[i].month);
         }
@@ -35,7 +35,8 @@ class AlterDBScreenActivity : AppCompatActivity() {
         listView.adapter = arrayAdapter;
 
         listView.setOnItemClickListener { _, _, position, _ ->
-            Toast.makeText(this, arrayList[position], Toast.LENGTH_LONG).show()
+            val name = arrayAdapter.getItem(position).toString()
+            Toast.makeText(this, name, Toast.LENGTH_LONG).show()
         }
 
         homeScreenAlterDBBtn.setOnClickListener{

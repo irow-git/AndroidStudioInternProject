@@ -49,7 +49,7 @@ class AddIncomeScreen : Fragment() {
         var monthcb = ""
         var bool = false
         view.pickDateIncomeBtn.setOnClickListener {
-            val formate = SimpleDateFormat("dd MMM yyyy", Locale.GERMANY)
+            val formate = SimpleDateFormat("dd MMM yyyy", Locale.UK)
             val now = Calendar.getInstance()
             val datePicker =
                 context?.let { it1 ->
