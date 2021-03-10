@@ -19,4 +19,13 @@
     <string name="fragIncomeDeleteBtnTxt">Изтрий</string>
     <string name="Budget">Общ бюджет</string>
     <string name="contentDescription">Pig</string>
+    <string name="UDNameEditText">Име</string>
+    <string name="UDDateBtnText">Избери дата</string>
+    <string name="UDHomeBtnText">Начален екран</string>
+    <string name="UDDeleteButton">Изтрий</string>
+    <string name="UDCheckBoxText">С повтаряне всеки месец</string>
+    <string name="UDChangeBtnText">Промени</string>
+    <string name="UDDayTextView">Ден</string>
+    <string name="UDMonthTextView">Месец</string>
+    <string name="UDAmountEditText">Сума</string>
 </resources>

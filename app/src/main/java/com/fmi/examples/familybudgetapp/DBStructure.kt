@@ -1,6 +1,8 @@
 package com.fmi.examples.familybudgetapp
 
-class DBStructure{
+import java.io.Serializable
+
+class DBStructure : Serializable{
 
     var id : Int = 0
     var day : String = ""

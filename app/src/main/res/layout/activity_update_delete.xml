@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateDeleteActivity"
+    android:background="@drawable/custom_background_gradient">
+
+    <EditText
+        android:id="@+id/UDNameEditTextIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Име"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="@string/UDNameEditText"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UDAmountEditTextID" />
+
+    <ImageView
+        android:id="@+id/UDImageView"
+        android:layout_width="324dp"
+        android:layout_height="381dp"
+        android:layout_marginBottom="90dp"
+        android:contentDescription="@string/contentDescription"
+        android:src="@drawable/saving"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/UDPickDateIncomeBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/UDDateBtnText"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UDNameEditTextIncome" />
+
+    <Button
+        android:id="@+id/UDHomeScreenIncomeBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/UDHomeBtnText"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/UDDeleteBtnID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/UDDeleteButton"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/UDCheckBoxIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/UDCheckBoxText"
+        android:textColor="#990099"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/UDHomeScreenIncomeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/UDChangeBtnID"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/custom_button2"
+        android:text="@string/UDChangeBtnText"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/UDDayTextViewID"
+        android:layout_width="74dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/UDDayTextView"
+        android:textColor="#990099"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/UDMonthTextViewID"
+        android:layout_width="154dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/UDMonthTextView"
+        android:textColor="#990099"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/UDDayTextViewID"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/UDAmountEditTextID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Сума"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_money_icon"
+        android:ems="10"
+        android:hint="@string/UDAmountEditText"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UDMonthTextViewID" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
