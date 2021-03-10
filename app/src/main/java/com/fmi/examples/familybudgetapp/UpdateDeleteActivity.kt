@@ -49,6 +49,16 @@ class UpdateDeleteActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        UDChangeBtnID.setOnClickListener(){
+            val string: String = message
+            val listArray: List<String> = string.split(":")
+            val db = DataBaseHandler(this)
+
+            db.updateData(UDAmountEditTextID.text.toString().toDouble(), UDNameEditTextIncome.text.toString(), UDDayTextViewID.text.toString(), UDMonthTextViewID.text.toString(), listArray[0])
+            val intent = Intent(this, AlterDBScreenActivity::class.java)
+            startActivity(intent)
+        }
+
         /**
          * Calendar
          */

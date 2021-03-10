@@ -74,4 +74,22 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
         db.delete(TABLE_NAME, "$COL_ID=?", arrayOf(value))
         db.close()
     }
+
+    fun updateData(amount: Double, name: String, day: String, month: String, id: String){
+        val db = this.writableDatabase
+        val query = "Select * from $TABLE_NAME"
+        val result = db.rawQuery(query, null)
+        if(result.moveToFirst()) {
+            do {
+                var cv = ContentValues()
+                cv.put(COL_NAME, name)
+                cv.put(COL_AMOUNT, amount)
+                cv.put(COL_DAY, day)
+                cv.put(COL_MONTH, month)
+                db.update(TABLE_NAME, cv, "$COL_ID=?", arrayOf(id))
+            } while (result.moveToNext())
+            result.close()
+            db.close()
+        }
+    }
 }

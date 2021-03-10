@@ -24,8 +24,8 @@ class AlterDBScreenActivity : AppCompatActivity() {
         )
         for(i in 0 until data.size) {
             var s = ""
-            s = if(data[i].isIncome == 0) "Приход"
-            else "Разход"
+            s = if(data[i].isIncome == 0) "Разход"
+            else "Приход"
             arrayList.add(
                 data[i].id.toString() + ": Име: " + data[i].name + " \n"
                         + s + ": " + data[i].amount + " лв" + " \n"
