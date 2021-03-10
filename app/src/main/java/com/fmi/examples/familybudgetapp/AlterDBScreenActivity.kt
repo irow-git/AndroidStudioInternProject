@@ -2,10 +2,9 @@ package com.fmi.examples.familybudgetapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_alter_d_b_screen.*
 import java.util.*
@@ -28,9 +27,9 @@ class AlterDBScreenActivity : AppCompatActivity() {
             s = if(data[i].isIncome == 0) "Приход"
             else "Разход"
             arrayList.add(
-                data[i].id.toString() + ": Име: " + data[i].name + "\n"
-                        + s + ": " + data[i].amount + "лв" + "\n"
-                        + data[i].day + "\n" + data[i].month
+                data[i].id.toString() + ": Име: " + data[i].name + " \n"
+                        + s + ": " + data[i].amount + " лв" + " \n"
+                        + data[i].day + " \n" + data[i].month + " \n" + s
             )
         }
         val listView = findViewById<ListView>(R.id.listView1);
@@ -39,7 +38,6 @@ class AlterDBScreenActivity : AppCompatActivity() {
         
         listView.setOnItemClickListener { _, _, position, _ ->
             val name = arrayAdapter.getItem(position).toString()
-            Toast.makeText(this, name, Toast.LENGTH_LONG).show()
             val intent = Intent(this, UpdateDeleteActivity::class.java)
             intent.putExtra("Name", name)
             startActivity(intent)
@@ -49,6 +47,11 @@ class AlterDBScreenActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
