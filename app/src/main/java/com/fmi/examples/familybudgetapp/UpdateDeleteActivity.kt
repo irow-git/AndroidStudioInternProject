@@ -54,9 +54,24 @@ class UpdateDeleteActivity : AppCompatActivity() {
             val listArray: List<String> = string.split(":")
             val db = DataBaseHandler(this)
 
-            db.updateData(UDAmountEditTextID.text.toString().toDouble(), UDNameEditTextIncome.text.toString(), UDDayTextViewID.text.toString(), UDMonthTextViewID.text.toString(), listArray[0])
-            val intent = Intent(this, AlterDBScreenActivity::class.java)
-            startActivity(intent)
+            if(UDAmountEditTextID.text.isEmpty() || UDAmountEditTextID.text.equals(String)
+                || UDNameEditTextIncome.text.isEmpty()
+                || UDDayTextViewID.text.isEmpty()
+                || UDMonthTextViewID.text.isEmpty())
+            {
+                Toast.makeText(this,"Грешно попълнени данни!", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                db.updateData(
+                    UDAmountEditTextID.text.toString().toDouble(),
+                    UDNameEditTextIncome.text.toString(),
+                    UDDayTextViewID.text.toString(),
+                    UDMonthTextViewID.text.toString(),
+                    listArray[0]
+                )
+                val intent = Intent(this, AlterDBScreenActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         /**

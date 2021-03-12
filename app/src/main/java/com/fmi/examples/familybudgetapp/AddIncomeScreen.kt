@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.activity_update_delete.*
 
 import kotlinx.android.synthetic.main.fragment_add_income_screen.*
 import kotlinx.android.synthetic.main.fragment_add_income_screen.view.*
@@ -37,6 +38,14 @@ class AddIncomeScreen : Fragment() {
 
         view.addIncomeButton.setOnClickListener{
 
+            if(UDAmountEditTextID.text.isEmpty() || UDAmountEditTextID.text.equals(String)
+                || UDNameEditTextIncome.text.isEmpty()
+                || UDDayTextViewID.text.isEmpty()
+                || UDMonthTextViewID.text.isEmpty())
+            {
+                Toast.makeText(context,"Грешно попълнени данни!", Toast.LENGTH_SHORT).show()
+            }
+            else
             data()
 
         }

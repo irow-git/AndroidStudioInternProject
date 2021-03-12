@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.activity_alter_d_b_screen.*
+import kotlinx.android.synthetic.main.activity_update_delete.*
 import kotlinx.android.synthetic.main.fragment_add_expense_screen.*
 import kotlinx.android.synthetic.main.fragment_add_expense_screen.view.*
 import java.text.SimpleDateFormat
@@ -34,6 +35,14 @@ class AddExpenseScreen : Fragment() {
         }
 
         view.addExpenseButton.setOnClickListener {
+            if(UDAmountEditTextID.text.isEmpty() || UDAmountEditTextID.text.equals(String)
+                || UDNameEditTextIncome.text.isEmpty()
+                || UDDayTextViewID.text.isEmpty()
+                || UDMonthTextViewID.text.isEmpty())
+            {
+                Toast.makeText(context,"Грешно попълнени данни!", Toast.LENGTH_SHORT).show()
+            }
+            else
             data()
         }
 

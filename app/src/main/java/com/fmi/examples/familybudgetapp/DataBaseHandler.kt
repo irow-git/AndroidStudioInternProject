@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.view.View
 import android.widget.Toast
+import java.util.*
+import kotlin.collections.ArrayList
 
 const val DATABASE_NAME = "FamilyAppDB"
 const val TABLE_NAME="Budged"
@@ -35,17 +37,18 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
     fun insertData(dbStructure: DBStructure) {
         val db = this.writableDatabase
         var cv = ContentValues()
-        cv.put(COL_DAY, dbStructure.day)
-        cv.put(COL_MONTH, dbStructure.month)
-        cv.put(COL_AMOUNT, dbStructure.amount)
-        cv.put(COL_NAME, dbStructure.name)
-        cv.put(COL_ISINCOME, dbStructure.isIncome)
-        var result = db.insert(TABLE_NAME, null, cv)
-        if (result == (-1).toLong())
-            Toast.makeText(context, "Грешка!", Toast.LENGTH_SHORT).show()
-        else
-            Toast.makeText(context, "Информацията е запаметена", Toast.LENGTH_SHORT).show()
-    }
+            cv.put(COL_DAY, dbStructure.day)
+            cv.put(COL_MONTH, dbStructure.month)
+            cv.put(COL_AMOUNT, dbStructure.amount)
+            cv.put(COL_NAME, dbStructure.name)
+            cv.put(COL_ISINCOME, dbStructure.isIncome)
+            val result = db.insert(TABLE_NAME, null, cv)
+            if (result == (-1).toLong())
+                Toast.makeText(context, "Грешка!", Toast.LENGTH_SHORT).show()
+            else
+               Toast.makeText(context, "Информацията е запаметена", Toast.LENGTH_SHORT).show()
+        }
+
 
     fun readData(): ArrayList<DBStructure> {
         var list  : ArrayList<DBStructure> = ArrayList()
