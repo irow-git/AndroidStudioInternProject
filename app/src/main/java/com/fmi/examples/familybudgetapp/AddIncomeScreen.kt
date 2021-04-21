@@ -38,14 +38,7 @@ class AddIncomeScreen : Fragment() {
 
         view.addIncomeButton.setOnClickListener{
 
-            if(UDAmountEditTextID.text.isEmpty() || UDAmountEditTextID.text.equals(String)
-                || UDNameEditTextIncome.text.isEmpty()
-                || UDDayTextViewID.text.isEmpty()
-                || UDMonthTextViewID.text.isEmpty())
-            {
-                Toast.makeText(context,"Грешно попълнени данни!", Toast.LENGTH_SHORT).show()
-            }
-            else
+
             data()
 
         }
